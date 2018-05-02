@@ -1,0 +1,17 @@
+.SearchField-container {
+  margin: 2px 0;
+}
+
+.SearchField-label {
+  font-size: 22px;
+  margin-right: 5px;
+}
+
+.SearchField-input {
+  font-size: 22px;
+  width: 220px;
+}
+
+.Search-button {
+  font-size: 22px;
+}
