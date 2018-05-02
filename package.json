@@ -8,11 +8,11 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build:client:dev": "webpack --mode development --config webpack.config.client.js",
-    "build:server:dev": "webpack --mode development --config webpack.config.server.js",
+    "build:client:dev": "webpack --mode development --config webpack.client.config.js",
+    "build:server:dev": "webpack --mode development --config webpack.server.config.js",
     "build:prod": "webpack --mode production --config webpack.config.js",
     "start:client:dev": "webpack-dev-server --mode development --config-name client",
-    "start:server:dev": "pm2 start ./dist/server -i 1 --watch",
+    "start:server:dev": "pm2 start ./dist/server.js -i 1 --watch",
     "start": "pm2 start ./dist/server.js",
     "test": "mocha-webpack --webpack-config webpack.test.config.js \"tests/*.test.js\""
   },

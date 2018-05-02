@@ -2,7 +2,7 @@ import express from 'express';
 import apicache from 'apicache';
 import PackageData from '../models/package-data';
 import { getDeps } from '../utils';
-import { DEPTH as depth } from '../../config';
+import { DEPTH } from '../../config';
 
 const router = express.Router();
 const cache = apicache.middleware;
@@ -47,7 +47,7 @@ router.post('/dependencies/:packageName/:packageVersion', cache('5 minutes'), (r
     return res.json({ errors: ['Package name is required.'] });
   }
 
-  return init(packageName, packageVersion, depth)
+  return init(packageName, packageVersion, DEPTH)
     .then(rootPackage => {
       console.info(JSON.stringify(rootPackage, null, 2));
       res.json({ data: rootPackage });
